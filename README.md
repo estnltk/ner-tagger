@@ -1,13 +1,12 @@
 # Ner-tagger
-
-Ner-tagger is a web tool which helps linguists manually categorize entities in text.
-It has been developed specifically for annotating named entities, where the task it to categorise proper names into semantic types.
-The tool, however, can be easily customized for the similar annotation tasks.
+*Ner-tagger* is a web tool which helps linguists manually categorise entities in text.
+It has been developed specifically for annotating named entities, where the task it to categorise proper names into a number of semantic types.
+The tool, however, can be easily customised for annotation tasks alike.
 
 ## Features
-* Allows to run multiple annotation projects simultaneously
-* Supports multiple users
-* Administrative interface to monitor annotation process
+* *Ner-tagger* allows to run multiple annotation projects simultaneously,
+* supports multiple users,
+* comes with a administrative interface to monitor annotation process.
 
 ## Use cases
 One might find *ner-tagger* useful for the following annotation tasks:
@@ -19,7 +18,6 @@ One might find *ner-tagger* useful for the following annotation tasks:
 See detailed [installation instructions](docs/installation.md).
 
 ## Screenshots
-
 The main page lists corpora assigned to a current user.
 
 ![alt text](docs/img/corpus-list.png "Ner-tagger corpus list")
