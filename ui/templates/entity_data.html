@@ -1,0 +1,18 @@
+{
+"entity": {
+"id": {{ entity.id }},
+"text": "{{ entity.text }}",
+"categories": ["{{ entity.categories.0 }}", "{{ entity.categories.1 }}"]
+},
+"sentences": [
+{% for s in sentences %}
+    {
+    "id": {{ s.id }},
+    "text": "{{ s.text }}",
+    "entity_start": {{ s.entity_start }},
+    "entity_end": {{ s.entity_end }}
+    }
+    {% if not forloop.last %},{% endif %}
+{% endfor %}
+]
+}

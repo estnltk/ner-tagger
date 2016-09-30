@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="corpus-content" class="container">
+        <h1>Vali korpus</h1>
+        <table id="corpus-table" class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>korpus</th>
+                <th>loomise kuupäev</th>
+                <th>nimed#</th>
+                <th>märgendamata nimed#</th>
+                <th>laused#</th>
+                <th>märgendamata laused#</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for corpus in corpus_list %}
+                <tr>
+                    <td>{{ corpus.id }}</td>
+                    <td><a href="{% url 'annotation-view' corpus=corpus.id %}">{{ corpus.name }}</a></td>
+                    <td>{{ corpus.timestamp }}</td>
+                    <td>{{ corpus.entity_count }}</td>
+                    <td>{{ corpus.unprocessed_entity_count }}</td>
+                    <td>{{ corpus.sentence_count }}</td>
+                    <td>{{ corpus.unprocessed_sentence_count }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

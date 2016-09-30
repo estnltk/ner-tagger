@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="help-page" class="container">
+        <h1>Juhend</h1>
+        <p>
+            Sõna märgendamisel tuleb arvestada konteksti.
+            Kui antud sõna on suurema fraasi osa, siis seda tuleb märgendada fraasile vastava märgendiga. <br/>
+            Nt. lauses "Puhkan <b>Ladoga</b> järve kaldal" sõna Ladoga märgendiks on LOC, kuna ta on fraasi "Ladoga
+            järvel"
+            sees.
+        <p>
+        <h2>Märgendid</h2>
+        <table class="table">
+            <tr>
+                <td>LOC:</td>
+                <td>asukoht</td>
+            </tr>
+            <tr>
+                <td>PER:</td>
+                <td>persoon</td>
+            </tr>
+            <tr>
+                <td>ORG:</td>
+                <td>organisatsioon</td>
+            </tr>
+            <tr>
+                <td>FAC (facility):</td>
+                <td>inimeste poolt ehitatud objektid (nt lennujaam, sadam, raamatukogu jm)</td>
+            </tr>
+            <tr>
+                <td>PRD (product):</td>
+                <td>tooded (nt Audi A6, Samsung A3 jm)</td>
+            </tr>
+            <tr>
+                <td>O:</td>
+                <td>muu (mitte LOC/PER/ORG/FAC/PRD)</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

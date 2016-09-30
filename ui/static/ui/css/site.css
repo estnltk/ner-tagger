@@ -1,0 +1,98 @@
+#corpus-content h1 {
+    margin-bottom: 30px;
+}
+
+#corpus-table td, #corpus-table th {
+    padding: 10px;
+}
+
+#entity {
+    text-align: center;
+    margin: 40px;
+    height: 40px;
+}
+
+#annotation-box {
+    margin: 50px auto 0;
+    text-align: center;
+}
+
+#sentence-box {
+    font-size: 16px;
+    background: #ffc000;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sentence { max-width: 700px; }
+
+#sentence .snt-entity {
+    background-color: white;
+    padding: 0 7px;
+}
+
+#buttons {
+    margin: 10px;
+}
+
+#buttons .btn {
+    width: 80px;
+    height: 34px;
+}
+
+#buttons .btn span.lbl { padding-right: 8px; }
+
+#buttons .btn span.key {
+    color: #e3e3e3;
+    font-weight: bold;
+}
+#buttons .delimiter {display: inline-block; width: 100px;}
+
+#btn-skip { width: 200px !important; }
+
+#timer-box {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 59px;
+    right: 0;
+    margin: 15px;
+}
+
+#btn-timer {
+    font-size: 14px;
+    margin-right: 10px;
+    border-color: #cacaca;
+}
+
+#timer {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 25px;
+    background-color: #efefef;
+    border-radius: 56px;
+}
+
+#corpus-link {
+    display: inline-block;
+    margin: 15px;
+}
+
+#help {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 15px;
+    max-width: 600px;
+}
+
+#help span { font-weight: bold; }
+
+#help td { padding-right: 10px; }

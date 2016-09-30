@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div id="timer-box">
+        <button id="btn-timer" class="btn btn-default btn-pause-timer">
+            <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+        </button>
+        <span id="timer">0</span>
+    </div>
+
+    <div id="info">
+        <h1 id="entity"></h1>
+    </div>
+    <div id="annotation-box">
+        <div id="sentence-box">
+            <div id="sentence">Loading...</div>
+        </div>
+        <div id="buttons">
+            <button id="btn-lbl-loc" class="btn btn-default btn-lbl" data-category="LOC">
+                <span class="lbl">LOC</span><span class="key">A</span>
+            </button>
+            <button id="btn-lbl-per" class="btn btn-default btn-lbl" data-category="PER">
+                <span class="lbl">PER</span><span class="key">S</span>
+            </button>
+            <button id="btn-lbl-org" class="btn btn-default btn-lbl" data-category="ORG">
+                <span class="lbl">ORG</span><span class="key">D</span>
+            </button>
+
+            <div class="delimiter"></div>
+
+            <button id="btn-lbl-o" class="btn btn-default btn-lbl" data-category="O">
+                <span class="lbl">O</span><span class="key">J</span>
+            </button>
+            <button id="btn-lbl-fac" class="btn btn-default btn-lbl" data-category="FAC">
+                <span class="lbl">FAC</span>
+                <splan class="key">K</splan>
+            </button>
+            <button id="btn-lbl-prd" class="btn btn-default btn-lbl" data-category="PRD">
+                <span class="lbl">PRD</span><span class="key">L</span>
+            </button>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts_bottom %}
+
+    <script src="{% static 'ui/js/annotation.js' %}"></script>
+{% endblock %}

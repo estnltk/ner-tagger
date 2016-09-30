@@ -1,0 +1,14 @@
+[
+{% for se in sentence_annotations %}
+    {
+        "id": {{ se.id }},
+        "text": "{{ se.sentence.text | escapejs }}",
+        "entity_annotation_id": {{ se.entity_annotation.id }},
+        "entity_text": "{{ se.entity_annotation.entity.text | escapejs }}",
+        "entity_categories": ["{{ se.entity_annotation.entity.categories.0 }}", "{{ se.entity_annotation.entity.categories.1 }}"],
+        "entity_start": {{ se.sentence.entity_start }},
+        "entity_end": {{ se.sentence.entity_end }}
+    }
+    {% if not forloop.last %},{% endif %}
+{% endfor %}
+]
