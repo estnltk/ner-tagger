@@ -1,6 +1,6 @@
 # Ner-tagger
 *Ner-tagger* is a web tool which helps linguists manually categorise entities in text.
-It has been developed specifically for annotating named entities, where the task it to categorise proper names into a number of semantic types.
+It has been developed specifically for an annotation of named entities, where the task it to categorise proper names into a number of semantic types.
 The tool, however, can be easily customised for annotation tasks alike.
 
 ## Features
