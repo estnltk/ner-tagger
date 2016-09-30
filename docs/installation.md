@@ -13,8 +13,13 @@ Install bootstrap:
 
     $ python bootstrap.py
 
-Create a configuration file containing database connection properties using a file conf/dev.cnf as a template.
+Create a configuration file containing database connection properties using *conf/dev.cnf* as a template.
 Next, specify a full path to the configuration file in *buildout-development.cfg*.
+
+    initialization =
+        import os
+        os.environ['CONFIG'] = 'path to configuration file'
+
 
 Install an application and dependencies:
 
@@ -26,13 +31,13 @@ Setup a database schema:
     $ ./bin/django migrate makemigrations ui
     $ ./bin/django migrate ui
 
-Create a super user:
+Create a super-user:
 
     $ ./bin/django cratesuperuser
 
 Import a demo corpus:
 
-    $ ./bin/django import_corpus "Corpus name" "corpus.csv"
+    $ ./bin/django import_corpus "corpus-name" data/demo-corpus.csv
 
 Run a development server:
 
@@ -41,11 +46,12 @@ Run a development server:
 So far, you can login to http://localhost:8000/admin and inspect the imported corpus.
 Now, lets create a new user and assign him a corpus for annotation.
 First, go to http://localhost:8000/admin/auth/user and add a new user.
-Next, assign a corpus:
+Next, assign the corpus:
 
     $ ./bin/django assign_corpus "user-name" "corpus-name"
 
-Now, you can login with a newly crated username to http://localhost:8000/ and start annotating a corpus.
+Now, you can login with a newly crated user to http://localhost:8000/ and start annotating the corpus.
+
 
 ## Production installation
 
@@ -77,7 +83,7 @@ Setup a database schema:
     $ ./bin/django migrate makemigrations ui
     $ ./bin/django migrate ui
 
-Collect static files to apache webroot:
+Copy static files to apache webroot directory:
 
     $ ./bin/django collectstatic
 
@@ -87,4 +93,4 @@ Start Apache:
 
 Ner-tagger shoud now be available at http://yourhost:80/.
 
-Next, follow steps in section [Getting Started](##Getting-Started) to create users, import a corpus, etc.
+Next, follow steps in section [Getting Started](#getting-started) to create users, import a corpus, etc.
