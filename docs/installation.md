@@ -13,6 +13,32 @@ Install bootstrap:
 
     $ python bootstrap.py
 
+In case you encounter an error like
+
+    Downloading https://pypi.io/packages/source/s/setuptools/setuptools-28.2.0.zip
+    Traceback (most recent call last):
+      File "bootstrap.py", line 117, in <module>
+        ez['use_setuptools'](**setup_args)
+      File "<string>", line 178, in use_setuptools
+      File "<string>", line 128, in _do_download
+      File "<string>", line 346, in download_setuptools
+      File "<string>", line 265, in download_file_curl
+      File "<string>", line 220, in _clean_check
+      File "/home/at/anaconda2/lib/python2.7/subprocess.py", line 540, in check_call
+        raise CalledProcessError(retcode, cmd)
+    subprocess.CalledProcessError: Command '['curl', 'https://pypi.io/packages/source/s/setuptools/setuptools-28.2.0.zip', '--location', '--silent', '--output', '/tmp/bootstrap-LVEPuj/setuptools-28.2.0.zip']' returned non-zero exit status 77
+
+make sure you've got `ca-certificates` package installed
+
+    sudo apt-get install ca-certificates
+
+set an environment variable `CURL_CA_BUNDLE`:
+
+    export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+
+and try to install *bootstrap* again.
+
+
 Create a configuration file with the database connection parameters.
 Use *conf/dev.cnf* as a template.
 Next, specify a full path to the configuration file in *buildout-development.cfg*.
@@ -28,7 +54,7 @@ Install an application and dependencies:
 Setup a database schema:
 
     $ ./bin/django migrate
-    $ ./bin/django migrate makemigrations ui
+    $ ./bin/django makemigrations ui
     $ ./bin/django migrate ui
 
 Create a super-user:
