@@ -22,7 +22,7 @@ class Command(BaseCommand):
         corpus_name = options['corpus-name']
         corpus_file = options['corpus-file']
 
-        snt_order = list(range(100000))
+        snt_order = list(range(1000000))
         random.shuffle(snt_order)
 
         corpus = Corpus.objects.create(name=corpus_name)
@@ -43,7 +43,10 @@ class Command(BaseCommand):
                                         text=row["sentence"],
                                         order=snt_order.pop())
                 prew_entity = entity
+
                 if i % 1000 == 0:
                     self.stdout.write('{} rows imported'.format(i))
+
+            self.stdout.write('{} rows imported'.format(i))
 
         self.stdout.write(self.style.SUCCESS('Done!'))
