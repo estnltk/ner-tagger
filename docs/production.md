@@ -7,7 +7,7 @@ Install postgres 9.5, create a user *nertagger* and a database *nertagger*:
     su -
     yum localinstall https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm
     yum list postgres95*
-    yum install postgres95-server libpqxx-devel.x86_64
+    yum install postgres95-server postgresql95-devel libpqxx-devel.x86_64
     
     su postgres
     export PGDATA=/var/lib/pgsql/9.5/data
